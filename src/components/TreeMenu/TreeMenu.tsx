@@ -20,9 +20,13 @@ export const TreeMenu = () => {
         <CollapsibleNode key={node.title + index} node={node} renderNodes={renderLevel} parenNodeIsCollapsed={this?.parenNodeIsCollapsed} />
       );
     } else {
-      return <p key={node.title + index}>{node.title}</p>;
+      return (
+        <p key={node.title + index} className={styles.node}>
+          {node.title}
+        </p>
+      );
     }
   };
 
-  return data && <div className={styles.bold}>{data.map(renderLevel)}</div>;
+  return data && <div className={styles.container}>{data.map(renderLevel)}</div>;
 };

@@ -25,18 +25,33 @@ export const CollapsibleNode = ({ parenNodeIsCollapsed, node, renderNodes }: Nod
     if (parenNodeIsCollapsed) setIsCollapsed(true);
   }, [parenNodeIsCollapsed]);
 
+  const handleCollapse = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
+  const handleEndOFTransition = () => {
+    if (isCollapsed) {
+      const elementHeight = collapsibleNodeContainer.current?.scrollHeight;
+      elementHeight && setUnCollapsedHeight(elementHeight + 'px');
+    } else {
+      setUnCollapsedHeight('100%');
+    }
+  };
+
   return (
-    <div>
-      <p onClick={() => setIsCollapsed(!isCollapsed)}>{node.title}</p>
-      <div style={{ transition: 'height 1s', height: isCollapsed ? 0 : unCollapsedHeight }}>
+    <>
+      <p className={styles.nodeTitle} onClick={handleCollapse}>
+        {node.title}
+      </p>
+      <div style={{ transition: 'height .5s', height: isCollapsed ? 0 : unCollapsedHeight }}>
         <div
+          className={clsx([styles.nestedLevel, isCollapsed && styles.nestedLevelCollapsed])}
           ref={collapsibleNodeContainer}
-          className={clsx([styles.nodeContainer, styles.nestedLevel, isCollapsed && styles.nestedLevelCollapsed])}
-          onTransitionEnd={() => setUnCollapsedHeight('100%')}
+          onTransitionEnd={handleEndOFTransition}
         >
           {node.nodes.map(renderNodes, { parenNodeIsCollapsed: isCollapsed })}
         </div>
       </div>
-    </div>
+    </>
   );
 };
