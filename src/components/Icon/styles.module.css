@@ -1,0 +1,8 @@
+.icon {
+    width: 15px;
+    text-align: center;
+    transition: all 0.5s;
+}
+.collapsed {
+    transform: rotate(45deg);
+}

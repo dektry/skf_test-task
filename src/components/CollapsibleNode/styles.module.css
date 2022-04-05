@@ -12,5 +12,9 @@
 
 .nodeTitle {
     cursor: pointer;
-    margin-bottom: 0;
+}
+
+.titleWrapper {
+    display: flex;
+    align-items: center;
 }

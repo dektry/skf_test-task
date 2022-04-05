@@ -3,6 +3,7 @@ import clsx from 'clsx';
 
 import { TreeNode } from '../TreeMenu/TreeMenu';
 import styles from './styles.module.css';
+import { Icon } from '../Icon/Icon';
 
 interface NodeProps {
   node: TreeNode;
@@ -40,9 +41,12 @@ export const CollapsibleNode = ({ parenNodeIsCollapsed, node, renderNodes }: Nod
 
   return (
     <>
-      <p className={styles.nodeTitle} onClick={handleCollapse}>
-        {node.title}
-      </p>
+      <div className={styles.titleWrapper}>
+        <Icon collapsed={isCollapsed} />
+        <p className={styles.nodeTitle} onClick={handleCollapse}>
+          {node.title}
+        </p>
+      </div>
       <div style={{ transition: 'height .5s', height: isCollapsed ? 0 : unCollapsedHeight }}>
         <div
           className={clsx([styles.nestedLevel, isCollapsed && styles.nestedLevelCollapsed])}

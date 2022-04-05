@@ -1,3 +1,7 @@
 .container {
     padding: 5% 0 0 5%;
 }
+.titleWrapper {
+    display: flex;
+    align-items: center;
+}

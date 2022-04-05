@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import styles from './styles.module.css';
 import { CollapsibleNode } from '../CollapsibleNode/CollapsibleNode';
+import { Icon } from '../Icon/Icon';
 
 export type TreeNode = { title: string; nodes: TreeNode[] };
 
@@ -21,9 +22,12 @@ export const TreeMenu = () => {
       );
     } else {
       return (
-        <p key={node.title + index} className={styles.node}>
-          {node.title}
-        </p>
+        <div className={styles.titleWrapper}>
+          <Icon />
+          <p key={node.title + index} className={styles.node}>
+            {node.title}
+          </p>
+        </div>
       );
     }
   };
