@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import TreeMenu from './components/TreeMenu';
 
 function App() {
   return (
     <div>
-      Cleaned
+      <TreeMenu />
     </div>
   );
 }
