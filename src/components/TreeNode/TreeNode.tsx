@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 import React, { useState } from "react";
 import { TreeNodeModel } from "types/api";
 import { ITreeNode } from "types/componentTypes";
-import style from "./TreeNode.less";
+import style from "components/TreeNode/TreeNode.less";
 
 const TreeNode: React.FC<ITreeNode> = ({ label, nodes, parent, isEmpty }) => {
   const [expanded, setExpanded] = useState<boolean>(parent);
