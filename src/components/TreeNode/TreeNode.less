@@ -1,0 +1,41 @@
+@black: #444;
+@gray: #ddd;
+
+.collapsed {
+  max-height: 60px;
+}
+.disclosed {
+  max-height: 100%;
+}
+
+.menuNode {
+  overflow: hidden;
+  background-color: whitesmoke;
+  color: @black;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  margin-left: 20px;
+  margin-top: 5px;
+  font-size: 20px;
+  -moz-transition: max-height .3s;
+  -ms-transition: max-height .3s ;
+  -o-transition: max-height .3s;
+  -webkit-transition: max-height .3s;
+  transition: max-height .3s;
+}
+
+.label {
+  display: flex;
+  width: 100%;
+  transition: background-color 0.2s linear;
+  height: 60px;
+  align-items: center;
+  padding-left: 5px;
+}
+
+.collapsable:hover {
+  cursor: pointer;
+  background-color: @gray;
+}

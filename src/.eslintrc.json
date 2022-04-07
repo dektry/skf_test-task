@@ -1,0 +1,80 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "eslint-plugin-import", "prettier"],
+  "env": {
+    "browser": true
+  },
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "project": ["tsconfig.json"],
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+    "react/prop-types": "off",
+    "react/jsx-no-bind": [
+      "warn",
+      {
+        "allowArrowFunctions": true,
+        "allowFunctions": true
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
+    "prefer-const": "warn",
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "no-var": "warn",
+    "no-unused-vars": "off",
+    "no-duplicate-imports": "warn",
+    "no-duplicate-case": "warn",
+    "react/display-name": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "no-extra-boolean-cast": "off",
+    "explicit-module-boundary-types": "off",
+    "no-mixed-spaces-and-tabs": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "no-trailing-spaces": [
+      2,
+      {
+        "skipBlankLines": true
+      }
+    ],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "ignore",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
